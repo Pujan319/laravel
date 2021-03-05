@@ -9,6 +9,6 @@
     }
 </style>
 <body>
-    <h1>hello world</h1>
+    <center><h1>hello world</h1></center>
 </body>
 </html>
