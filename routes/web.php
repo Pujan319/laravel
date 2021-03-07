@@ -25,3 +25,5 @@ Route::get('/hello','App\Http\Controllers\myController@index');
 // Route::get('/hi', function () {
 //     return view('secondpage');
 // });
+//to show addproduct form
+Route::get('/addproduct','App\Http\Controllers\myController@showproductform');
