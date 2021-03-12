@@ -10,6 +10,11 @@
 <body>
 	<div class="container">
 		<h1 class="text-info">Show Product</h1>
+		@if(Session::has('msg'))
+		<div class="alert alert-success">
+			{{Session::get('msg')}}
+		</div>
+		@endif
 		<table class="table">
   <thead>
     <tr>
@@ -30,8 +35,8 @@
       <td>{{$s->product_description}}</td>
       <td><img src="{{asset('uploads/products')}}/{{$s->product_image}}" width="80"></td>
       <td>
-      	<a href=""><button class="btn btn-primary"><i class="bi bi-pencil-square text-white"></i></button></a>
-      	<a href=""><button class="btn btn-danger"><i class="bi bi-trash text-white"></i></button></a>
+      	<a href="{{route('editproduct',$s->id)}}"><button class="btn btn-primary"><i class="bi bi-pencil-square text-white"></i></button></a>
+      	<a href="{{route('delete',$s->id)}}" onclick="return confirm('are you sure want to delete this product?')"><button class="btn btn-danger"><i class="bi bi-trash text-white"></i></button></a>
       </td>
     </tr>
     @endforeach
